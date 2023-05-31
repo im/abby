@@ -62,15 +62,12 @@ jobs:
       - name: 更新 blog 主题
         run: git submodule update --remote --merge
       
-      - name: 新建文件夹
-        run: mkdir pages
-      
       - name: hugo 编译
         working-directory: './blog'
         run: hugo --baseURL=${{ steps.pages.outputs.base_url }} --destination="./docs/"
 
       - name: 复制 blog 文件夹
-        run: cp -r ./blog/docs ./pages
+        run: cp -r ./blog/docs ./
 
       - name: 安装 <mobile> 项目依赖 ...
         working-directory: './projects/mobile'
@@ -81,11 +78,11 @@ jobs:
         run: pnpm build
 
       - name: 复制 <mobile> 文件夹
-        run: cp -r ./projects/mobile/mobile ./pages
+        run: cp -r ./projects/mobile/mobile ./docs
 
       - name: 部署 pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAGES_TOKEN }}
-          publish_dir: ./pages
+          publish_dir: ./docs
 
