@@ -1,0 +1,71 @@
+name: Deploy Pages
+
+on:
+  push:
+    paths-ignore:
+      - "images/**"
+      - "LICENSE"
+      - "README.md"
+    branches:
+      - main
+  workflow_dispatch:
+    # manual run
+    inputs:
+      hugoVersion:
+        description: "Hugo Version"
+        required: false
+        default: "0.83.0"
+
+# Allow one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+# Default to bash
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  # Build job
+  build:
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: "0.83.0"
+    steps:
+      - name: 校验 hugo 版本
+        if: ${{ github.event.inputs.hugoVersion }}
+        run: export HUGO_VERSION="${{ github.event.inputs.hugoVersion }}"
+
+      - name: 安装 hugo cli
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: 获取 main 分支代码
+        uses: actions/checkout@v3
+        with:
+          ref: main
+          
+      - name: 获取 blog 主题
+        run: git submodule update --init --recursive
+
+      - name: 更新最新 blog 主题
+        run: git submodule update --remote --merge
+      
+      - name: 进入 blog 目录
+        run: cd blog
+
+      - name: hugo 编译
+        run: |
+          hugo \
+            --baseURL ${{ steps.pages.outputs.base_url }} \
+
+      - name: 查看编译结果
+        run: ls
+
+      - name: deploy github pages
+          uses: peaceiris/actions-gh-pages@v3
+          with:
+              github_token: ${{ secrets.PAGES_TOKEN }}
+              publish_dir: ./dist
