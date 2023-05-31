@@ -1,0 +1,23 @@
+import DYNAMIC_LINE_BAR_MIX from './DYNAMIC_LINE_BAR_MIX'
+import DYNAMIC_RANKING_BAR from './DYNAMIC_RANKING_BAR'
+import DYNAMIC_RING from './DYNAMIC_RING'
+import LINE_BASICS from './LINE_BASICS'
+import LINE_STEP from './LINE_STEP'
+import PIE_BASICS from './PIE_BASICS'
+import PIE_ROSE from './PIE_ROSE'
+import BAR_BASICS from './BAR_BASICS'
+import PIE_PATTERN from './PIE_PATTERN'
+import RING_BASICS from './RING_BASICS'
+
+export default {
+    DYNAMIC_LINE_BAR_MIX,
+    DYNAMIC_RANKING_BAR,
+    DYNAMIC_RING,
+    LINE_STEP,
+    PIE_PATTERN,
+    PIE_ROSE,
+    LINE_BASICS,
+    PIE_BASICS,
+    BAR_BASICS,
+    RING_BASICS
+}

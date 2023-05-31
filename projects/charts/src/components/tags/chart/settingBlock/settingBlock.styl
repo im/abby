@@ -1,0 +1,33 @@
+/**
+* SettingBlock
+* @author tangxiaomi <81195314@qq.com>
+* @date 2023-04-25 14:33:26
+* @since 0.0.0
+*/
+.setting-block
+    background: #252626;
+    border-left: 1px solid #1f1f1f;
+    height 100%
+    width 240px
+    position relative
+    .data-table
+        position absolute
+        right 0
+        top 37px
+        width 50vw
+        max-width 50vw
+        height calc(100% - 37px)
+        background: #323232
+        padding 10px
+.tabs
+    display flex
+    .item
+        width 100%
+        height 37px
+        line-height: 37px
+        text-align: center
+        cursor pointer
+        font-size: 12px
+        &.active
+            background: #323232
+            color #fff

@@ -69,9 +69,6 @@ jobs:
       - name: 复制 blog 文件夹
         run: cp -r ./blog/docs ./
 
-      - name: ls ------
-        run: ls
-
       - name: 安装 <mobile> 项目依赖 ...
         working-directory: './projects/mobile'
         run: pnpm i
@@ -82,6 +79,17 @@ jobs:
 
       - name: 复制 <mobile> 文件夹
         run: cp -r ./projects/mobile/mobile ./docs
+
+      - name: 安装 <charts> 项目依赖 ...
+        working-directory: './projects/charts'
+        run: pnpm i
+
+      - name: 打包 <charts> 项目
+        working-directory: './projects/charts'
+        run: pnpm build
+
+      - name: 复制 <charts> 文件夹
+        run: cp -r ./projects/charts/charts ./docs
 
       - name: 部署 pages
         uses: peaceiris/actions-gh-pages@v3

@@ -1,0 +1,36 @@
+
+@import './base/base'
+
+*
+    box-sizing: border-box 
+
+a
+    text-decoration: none
+    color: var(--el-text-color-primary)
+    transition: 0.2s
+    &:hover
+        color var(--el-color-primary)
+
+body
+    color: var(--el-text-color-primary)
+    font-family: var(--font-family-default)
+
+#app
+    width 100vw
+    height 100vh
+
+
+.iconfont
+    color: #8E9399
+    font-size: 18px
+
+.el-button
+    &:focus, &:hover
+        .iconfont
+            color: var(--el-button-hover-text-color)
+    .iconfont
+        margin-right 5px
+        font-size: 12px
+.el-dialog__close
+    font-weight: bold
+    font-size: 22px!important
