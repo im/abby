@@ -69,6 +69,9 @@ jobs:
       - name: 复制 blog 文件夹
         run: cp -r ./blog/docs ./
 
+      - name: ls ------
+        run: ls
+
       - name: 安装 <mobile> 项目依赖 ...
         working-directory: './projects/mobile'
         run: pnpm i
