@@ -33,39 +33,33 @@ jobs:
     env:
       HUGO_VERSION: "0.83.0"
     steps:
-      - name: 校验 hugo 版本
+      - name: Check version
         if: ${{ github.event.inputs.hugoVersion }}
         run: export HUGO_VERSION="${{ github.event.inputs.hugoVersion }}"
-
-      - name: 安装 hugo cli
+      - name: Install Hugo CLI
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-
-      - name: 获取 main 分支代码
+      - name: Checkout
         uses: actions/checkout@v3
         with:
           ref: main
-          
-      - name: 获取 blog 主题
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v1
+      - name: Get Theme
         run: git submodule update --init --recursive
-
-      - name: 更新最新 blog 主题
+      - name: Update theme to Latest commit
         run: git submodule update --remote --merge
-      
-      - name: 进入 blog 目录
+      - name: 进入 blog
         run: cd blog
-
       - name: Build with Hugo
         run: |
           hugo \
             --baseURL ${{ steps.pages.outputs.base_url }} \
-
-      - name: 查看编译结果
-        run: ls
-
       - name: deploy github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-            github_token: ${{ secrets.PAGES_TOKEN }}
-            publish_dir: ./dist
+          github_token: ${{ secrets.PAGES_TOKEN }}
+          publish_dir: ./dist
+
