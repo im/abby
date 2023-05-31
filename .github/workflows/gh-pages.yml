@@ -59,7 +59,9 @@ jobs:
       - name: Build with Hugo-----
         working-directory: './blog'
         run: |
-          hugo --baseURL ${{ steps.pages.outputs.base_url }}
+          hugo --baseURL ${{ steps.pages.outputs.base_url }} --destination="./docs"
+      - name: 复制 blog 文件夹
+        run: cp -r ./blog/docs ./pages
       - name: deploy github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
