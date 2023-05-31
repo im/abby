@@ -78,9 +78,9 @@ params:
         imageTitle: 'Abby'
         imageWidth: 200
         imageHeight: 200
-        # buttons:
-        #     - name: Archive 📁
-        #       url: archives
+        buttons:
+            - name: Mobile
+              url: '/mobile'
         #     - name: Tags 🏷️
         #       url: tags 
             # - name: Search 🔍
