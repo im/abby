@@ -61,7 +61,6 @@ jobs:
         run: |
           hugo \
             --baseURL ${{ steps.pages.outputs.base_url }} \
-            --destination /docs/ \
       - name: ls ----
         run: ls blog  
       - name: 复制 blog 文件夹

@@ -4,6 +4,7 @@ paginate: 5
 theme: PaperMod
 languageCode: "cn"
 defaultContentLanguage: "cn"
+baseDir: './docs/'
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
