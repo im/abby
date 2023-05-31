@@ -51,7 +51,7 @@ jobs:
       - name: ls ----
         run: ls
       - name: 进入 blog ----
-        run: cd blog
+        run: cd ./blog
       - name: ls ----
         run: ls
       - name: Build with Hugo-----
