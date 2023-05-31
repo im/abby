@@ -50,6 +50,8 @@ jobs:
         run: git submodule update --remote --merge
       - name: ls ----
         run: ls
+      - name: 新建文件夹
+        run: mkdir pages
       - name: 进入 blog ----
         run: cd ./blog
       - name: ls ----
@@ -57,7 +59,7 @@ jobs:
       - name: Build with Hugo-----
         working-directory: './blog'
         run: |
-          hugo --baseURL="https://tangxiaomi.top" 
+          hugo --baseURL ${{ steps.pages.outputs.base_url }}
       - name: deploy github pages
         uses: peaceiris/actions-gh-pages@v3
         with:
