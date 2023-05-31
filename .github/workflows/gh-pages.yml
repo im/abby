@@ -58,9 +58,8 @@ jobs:
 
       - name: hugo 编译
         run: |
-          hugo \
-            --baseURL ${{ steps.pages.outputs.base_url }} \
-
+          hugo --baseURL ${{ steps.pages.outputs.base_url }}
+          
       - name: 查看编译结果
         run: ls
 
