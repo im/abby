@@ -55,6 +55,7 @@ jobs:
       - name: ls ----
         run: ls
       - name: Build with Hugo-----
+        working-directory: '/blog'
         run: |
           hugo --baseURL="https://tangxiaomi.top" 
       - name: deploy github pages
