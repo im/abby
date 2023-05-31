@@ -1,0 +1,1 @@
+import{d as s,c as _,o,p as t,h as c,f as a}from"./index-db86a8fe.js";import{_ as d}from"./_plugin-vue_export-helper-c27b6911.js";const p=e=>(t("data-v-1d85e959"),e=e(),c(),e),n=p(()=>a("h1",null,"交易查询",-1)),r=[n],l=s({__name:"search",setup(e){return(h,i)=>(o(),_("div",null,r))}});const f=d(l,[["__scopeId","data-v-1d85e959"]]);export{f as default};

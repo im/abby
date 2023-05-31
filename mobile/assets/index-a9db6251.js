@@ -1,1 +1,0 @@
-import{d,f as _,o,p as s,h as t,e as c}from"./index-6d8dd3f2.js";import{_ as a}from"./_plugin-vue_export-helper-c27b6911.js";const n=e=>(s("data-v-76db6dbd"),e=e(),t(),e),p=n(()=>c("h1",null,"退款管理",-1)),r=[p],l=d({__name:"refund",setup(e){return(u,f)=>(o(),_("div",null,r))}});const m=a(l,[["__scopeId","data-v-76db6dbd"]]);export{m as default};

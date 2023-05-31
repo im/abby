@@ -6,8 +6,12 @@
   </url><url>
     <loc>/archives/</loc>
   </url><url>
+    <loc>/categories/</loc>
+  </url><url>
     <loc>/search/</loc>
   </url><url>
     <loc>/series/</loc>
+  </url><url>
+    <loc>/tags/</loc>
   </url>
 </urlset>

@@ -1,0 +1,1 @@
+import{d as e,r as _,c as o,o as t}from"./index-db86a8fe.js";import{_ as c}from"./_plugin-vue_export-helper-c27b6911.js";const s=e({__name:"home",setup(a){return _(1),(n,r)=>(t(),o("div",null,"交易统计数据：当天交易情况；交易走势，主要是统计数据"))}});const f=c(s,[["__scopeId","data-v-0e5c8fa5"]]);export{f as default};
