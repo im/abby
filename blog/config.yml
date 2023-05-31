@@ -1,5 +1,5 @@
-baseURL: "https://tangxiaomi.top/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: Notes
+baseURL: "https://abby.cool/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
+title: Abby
 paginate: 5
 theme: PaperMod
 languageCode: "cn"
@@ -30,14 +30,14 @@ languages:
           category: categories
           tag: tags
           series: series
-        menu:
-            main:
-                - name: Archive 📁
-                  url: archives
-                - name: Categories 🗂️
-                  url: categories
-                - name: Search 🔍
-                  url: search
+        # menu:
+        #     main:
+        #         - name: Archive 📁
+        #           url: archives
+        #         - name: Categories 🗂️
+        #           url: categories
+        #         - name: Search 🔍
+        #           url: search
 
 outputs:
     home:
@@ -48,9 +48,9 @@ outputs:
 params:
     hideFooter: true
     env: production # to enable google analytics, opengraph, twitter-cards and schema.
-    description: "https://tangxiaomi.top/"
+    description: "https://abby.cool/"
     # author: Theme PaperMod
-    author: ["糖小米"] # multiple authors
+    author: ["Abby"] # multiple authors
     DateFormat: "January 2, 2006"
 
     defaultTheme: auto
@@ -70,19 +70,19 @@ params:
     # images: ["papermod-cover.png"]
 
     profileMode:
-        enabled: false
+        enabled: true
         # title: ' '
         # title: '糖小米 🚀 '
-        title: '糖小米'
-        imageUrl: "/avatar.svg"
-        imageTitle: '糖小米'
+        title: 'Abby'
+        imageUrl: "/avatar3.jpeg"
+        imageTitle: 'Abby'
         imageWidth: 200
         imageHeight: 200
-        buttons:
-            - name: Archive 📁
-              url: archives
-            - name: Tags 🏷️
-              url: tags 
+        # buttons:
+        #     - name: Archive 📁
+        #       url: archives
+        #     - name: Tags 🏷️
+        #       url: tags 
             # - name: Search 🔍
             #   url: search
 
@@ -128,9 +128,9 @@ params:
 
         # - PaperMod is based on theme [Paper](https://github.com/nanxiaobei/hugo-paper).
 
-    socialIcons:
-        - name: github
-          url: "https://github.com/im/"
+    # socialIcons:
+    #     - name: github
+    #       url: "https://github.com/im/"
         # - name: Rss
         #   url: "index.xml"
 
@@ -150,9 +150,9 @@ params:
 
     assets:
         disableHLJS: false
-        favicon: "/avatar.svg"
-        favicon16x16: "/avatar.svg"
-        favicon32x32: "/avatar.svg"
+        favicon: "/avatar3.jpeg"
+        favicon16x16: "/avatar3.jpeg"
+        favicon32x32: "/avatar3.jpeg"
         # apple_touch_icon: "<link / abs url>"
         # safari_pinned_tab: "<link / abs url>"
 
