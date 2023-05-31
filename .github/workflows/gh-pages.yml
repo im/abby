@@ -73,15 +73,15 @@ jobs:
         run: cp -r ./blog/docs ./pages
 
       - name: 安装 <mobile> 项目依赖 ...
-        working-directory: './project/mobile'
+        working-directory: './projects/mobile'
         run: pnpm i
 
       - name: 打包 <mobile> 项目
-        working-directory: './project/mobile'
+        working-directory: './projects/mobile'
         run: pnpm build
 
       - name: 复制 <mobile> 文件夹
-        run: cp -r ./project/mobile/docs ./pages
+        run: cp -r ./projects/mobile/mobile ./pages
 
       - name: 部署 pages
         uses: peaceiris/actions-gh-pages@v3
