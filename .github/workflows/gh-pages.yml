@@ -52,7 +52,8 @@ jobs:
         run: ls
       - name: 进入 blog ----
         run: cd blog
-      - name: Build with Hugo
+        run: ls
+      - name: Build with Hugo-----
         run: |
           hugo --baseURL="https://tangxiaomi.top" 
       - name: deploy github pages
