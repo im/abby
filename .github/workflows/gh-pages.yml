@@ -56,10 +56,11 @@ jobs:
       - name: 进入 blog 目录
         run: cd blog
 
-      - name: hugo 编译
+      - name: Build with Hugo
         run: |
-          hugo --baseURL ${{ steps.pages.outputs.base_url }}
-          
+          hugo \
+            --baseURL ${{ steps.pages.outputs.base_url }} \
+
       - name: 查看编译结果
         run: ls
 
