@@ -1,5 +1,5 @@
 baseURL: "https://abby.cool/" # if your site is in 'https', then make sure your base url isn't written using 'http' otherwise your sitemap would contain http (as opposeed to https) URLs. This would affect Google indexing of your URLs.
-title: Abby
+title: ''
 paginate: 5
 theme: PaperMod
 languageCode: "cn"
@@ -30,14 +30,14 @@ languages:
           category: categories
           tag: tags
           series: series
-        # menu:
-        #     main:
-        #         - name: Archive 📁
-        #           url: archives
-        #         - name: Categories 🗂️
-        #           url: categories
-        #         - name: Search 🔍
-        #           url: search
+        menu:
+          main:
+            - name: Mobile
+              url: '/mobile'
+            - name: Charts
+              url: '/charts'
+            - name: ChatGPT
+              url: 'https://chat.abby.cool/'
 
 outputs:
     home:
@@ -78,9 +78,9 @@ params:
         imageTitle: 'Abby'
         imageWidth: 200
         imageHeight: 200
-        buttons:
-            - name: Mobile
-              url: '/mobile'
+        # buttons:
+        #     - name: Mobile
+        #       url: '/mobile'
         #     - name: Tags 🏷️
         #       url: tags 
             # - name: Search 🔍
