@@ -58,7 +58,7 @@ jobs:
         run: ls
       - name: Build with Hugo
         working-directory: './blog'
-        run: hugo --baseURL=${{ steps.pages.outputs.base_url }}
+        run: hugo --baseURL=${{ steps.pages.outputs.base_url }} --destination="./docs/"
       - name: ls ----
         run: ls blog  
       - name: 复制 blog 文件夹
