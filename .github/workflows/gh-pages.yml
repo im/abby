@@ -22,9 +22,9 @@ concurrency:
   cancel-in-progress: true
 
 # Default to bash
-defaults:
-  run:
-    shell: bash
+# defaults:
+#   run:
+#     shell: bash
 
 jobs:
   # Build job
