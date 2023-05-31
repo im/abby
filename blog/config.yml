@@ -74,7 +74,7 @@ params:
         # title: ' '
         # title: '糖小米 🚀 '
         title: 'Abby'
-        imageUrl: "/avatar3.jpeg"
+        imageUrl: "/avatar1.svg"
         imageTitle: 'Abby'
         imageWidth: 200
         imageHeight: 200
@@ -150,9 +150,9 @@ params:
 
     assets:
         disableHLJS: false
-        favicon: "/avatar3.jpeg"
-        favicon16x16: "/avatar3.jpeg"
-        favicon32x32: "/avatar3.jpeg"
+        favicon: "/avatar1.svg"
+        favicon16x16: "/avatar1.svg"
+        favicon32x32: "/avatar1.svg"
         # apple_touch_icon: "<link / abs url>"
         # safari_pinned_tab: "<link / abs url>"
 
