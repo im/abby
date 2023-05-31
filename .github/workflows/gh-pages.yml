@@ -33,37 +33,57 @@ jobs:
     env:
       HUGO_VERSION: "0.83.0"
     steps:
-      - name: Check version
+      - name: 校验 hugo 版本
         if: ${{ github.event.inputs.hugoVersion }}
         run: export HUGO_VERSION="${{ github.event.inputs.hugoVersion }}"
-      - name: Install Hugo CLI
+
+      - name: 安装 hugo
         run: |
           wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.deb \
           && sudo dpkg -i ${{ runner.temp }}/hugo.deb
-      - name: Checkout
+
+      - name: 安装 pnpm...
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.5.0
+      - name: 安装 nodejs...
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'
+
+      - name: 获取 main 分支代码
         uses: actions/checkout@v3
         with:
           ref: main
-      - name: Get Theme
+
+      - name: 获取 blog 主题
         run: git submodule update --init --recursive
-      - name: Update theme to Latest commit
+
+      - name: 更新 blog 主题
         run: git submodule update --remote --merge
-      - name: ls ----
-        run: ls
+      
       - name: 新建文件夹
         run: mkdir pages
-      - name: 进入 blog ----
-        run: cd blog
-      - name: ls ----
-        run: ls
-      - name: Build with Hugo
+      
+      - name: hugo 编译
         working-directory: './blog'
         run: hugo --baseURL=${{ steps.pages.outputs.base_url }} --destination="./docs/"
-      - name: ls ----
-        run: ls blog  
+
       - name: 复制 blog 文件夹
         run: cp -r ./blog/docs ./pages
-      - name: deploy github pages
+
+      - name: 安装 <mobile> 项目依赖 ...
+        working-directory: './project/mobile'
+        run: pnpm i
+
+      - name: 打包 <mobile> 项目
+        working-directory: './project/mobile'
+        run: pnpm build
+
+      - name: 复制 <mobile> 文件夹
+        run: cp -r ./project/mobile/docs ./pages
+
+      - name: 部署 pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.PAGES_TOKEN }}
