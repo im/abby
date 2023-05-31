@@ -34,8 +34,10 @@ languages:
           main:
             - name: Mobile
               url: '/mobile'
+              weight: 1
             - name: Charts
               url: '/charts'
+              weight: 2
             - name: ChatGPT
               url: 'https://chat.abby.cool/'
 
@@ -74,6 +76,7 @@ params:
         # title: ' '
         # title: '糖小米 🚀 '
         title: 'Abby'
+        subtitle: 'Product Manager'
         imageUrl: "/avatar1.svg"
         imageTitle: 'Abby'
         imageWidth: 200
