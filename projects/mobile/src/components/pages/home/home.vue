@@ -10,7 +10,7 @@
         <van-cell-group inset>
             <van-field
                 v-model="value"
-                label="密码"
+                label="字段标题"
                 autosize
                 type="textarea"
                 placeholder="请输入密码"
@@ -18,7 +18,7 @@
             />
             <van-field
                 v-model="value1"
-                label="请输入账号"
+                label="字段标题"
                 autosize
                 type="textarea"
                 placeholder="请输入账号"
