@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.vue'
 import vueRouter from './router'
 
-import { Tabbar, TabbarItem, Tabs, Tab, Skeleton, Cell, CellGroup, Card,ContactCard,Field } from 'vant'
+import { Tabbar, TabbarItem, Tabs, Tab,Popup, Skeleton, Cell,Picker, CellGroup, Card,ContactCard,Field,Radio,RadioGroup } from 'vant'
 import 'vant/lib/index.css'
 
 const app = createApp(App)
@@ -19,6 +19,10 @@ app.use(CellGroup)
 app.use(Card)
 app.use(ContactCard)
 app.use(Field)
+app.use(Picker)
+app.use(Popup)
+app.use(Radio)
+app.use(RadioGroup)
 
 app.use(vueRouter)
 
